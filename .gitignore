@@ -2,7 +2,7 @@ Created by IDE
 .DS_Store
 .idea/
 *.iml
-/platforms
+platforms
 
 docs
 
