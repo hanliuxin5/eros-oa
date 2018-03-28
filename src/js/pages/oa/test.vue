@@ -7,15 +7,21 @@
         <template v-for="(tab,index) in tabTitles">
             <div class="tab-item"
                  :style="{width: tabStyles.width +'px', height: tabStyles.height +'px',backgroundColor: currentPage == index ? tabStyles.activeBgColor : tabStyles.bgColor }"
-                 :slot="tabIndex(index)">
+                 :slot="'tab-title-'+index">
                 <image
                     :style="{ width: tabStyles.iconWidth + 'px', height:tabStyles.iconHeight+'px'}"
                     :src="currentPage == index ? tab.activeIcon : tab.icon"></image>
                 <text class="tab-text">{{tab.title}}</text>
             </div>
-            <div class="item-container" :style="contentStyle">
-                <text>{{index}}</text>
-            </div>
+            <template v-if="index===0">
+                <message :style="contentStyle"></message>
+            </template>
+            <template v-if="index!==0">
+                <div class="item-container" :style="contentStyle">
+                    <div :style="statusBarStyle"></div>
+                    <text>{{index}}</text>
+                </div>
+            </template>
         </template>
     </wxc-tab-bar>
 </template>
@@ -24,8 +30,11 @@
     import { WxcButton, WxcTabBar } from 'weex-ui'
     import Config from './config'
 
+    import Child from './child'
+    import Message from './module/message/message'
+
     export default {
-        components: {WxcButton, WxcTabBar},
+        components: {WxcButton, WxcTabBar, Child, Message},
         data () {
             return {
                 currentPage: 0,
@@ -34,13 +43,10 @@
             }
         },
         methods: {
-            tabIndex (index) {
-                return `tab-title-${index}`
-            },
             wxcTabBarCurrentTabSelected (e) {
                 const index = e.page
                 this.currentPage = index
-                console.log(index)
+                // console.log(index)
             },
             androidFinishApp () {
                 const globalEvent = weex.requireModule('globalEvent')
@@ -51,9 +57,7 @@
         },
         created () {
             this.androidFinishApp()
-            // const eros = weex.config.eros
-            // console.log(eros)
-            // console.log(this.tabTitles)
+            // console.log(this.tabStyles.height)
 
         },
         computed: {
@@ -61,15 +65,17 @@
                 const eros = weex.config.eros
                 const tabPageHeight = eros.deviceHeight / eros.deviceWidth * 750
                 return {
-                    height: tabPageHeight,
+                    width: 750,
+                    height: tabPageHeight - this.tabStyles.height,
                     backgroundColor: 'red'
                 }
             },
-            styleStatusBar: function () {
+            statusBarStyle: function () {
                 const eros = weex.config.eros
                 return {
+                    width: 750,
                     height: eros.statusBarHeight,
-                    backgroundColor: 'yellow'
+                    backgroundColor: 'blue'
                 }
             },
             height: function () {
@@ -90,7 +96,7 @@
     }
 
     .tab-text {
-        font-size: 24px;
+        font-size: 22px;
         lines: 1;
         text-overflow: ellipsis;
     }
@@ -99,6 +105,6 @@
         width: 750px;
         background-color: #f2f3f4;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
     }
 </style>
