@@ -13,15 +13,12 @@
                     :src="currentPage == index ? tab.activeIcon : tab.icon"></image>
                 <text class="tab-text">{{tab.title}}</text>
             </div>
-            <template v-if="index===0">
-                <message :style="contentStyle"></message>
-            </template>
-            <template v-if="index!==0">
-                <div class="item-container" :style="contentStyle">
-                    <div :style="statusBarStyle"></div>
-                    <text>{{index}}</text>
-                </div>
-            </template>
+            <message v-if="index===0" :style="contentStyle"></message>
+            <work v-else-if="index===1" :style="contentStyle"></work>
+            <div v-else class="item-container" :style="contentStyle">
+                <div :style="statusBarStyle"></div>
+                <text>{{index}}</text>
+            </div>
         </template>
     </wxc-tab-bar>
 </template>
@@ -32,9 +29,13 @@
 
     import Child from './child'
     import Message from './module/message/message'
+    import Work from './module/work/work'
 
     export default {
-        components: {WxcButton, WxcTabBar, Child, Message},
+        components: {
+            WxcButton, WxcTabBar, Child,
+            Message, Work
+        },
         data () {
             return {
                 currentPage: 0,

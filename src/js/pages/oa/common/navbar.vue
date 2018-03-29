@@ -42,7 +42,6 @@
         width: 750;
         background-color: #c0c0c0;
         height: 1;
-        align-self: end;
     }
 
 </style>

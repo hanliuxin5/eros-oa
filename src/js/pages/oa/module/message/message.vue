@@ -2,9 +2,11 @@
     <div class="item-container">
         <div :style="statusBarStyle"></div>
         <nav title="消息"></nav>
-        <list ref="list" class="list-content" :showRefresh="true" @refresh="onRefresh">
-            <cell class="list-item" v-for="item in 20">
-                <text>{{item}}</text>
+        <list ref="list" class="list-content" showRefresh="true" @refresh="onRefresh">
+            <cell style="height: 144" class="list-item" v-for="item in list">
+                <itemone :title="item.title" :body="item.body"
+                         :time="item.time" :notices="item.notices"
+                         :category="item.category"></itemone>
             </cell>
         </list>
         <div class="divide"></div>
@@ -14,11 +16,42 @@
 <script>
 
     import Nav from '../../common/navbar'
+    import Itemone from '../../common/item/itemone'
 
     export default {
-        components: {Nav},
+        components: {Nav, Itemone},
         data () {
-            return {}
+            return {
+                list: [{
+                    title: '任务',
+                    body: '你开森就好！',
+                    notices: 5,
+                    time: '18:00',
+                    category: 'mission'
+                }, {
+                    title: '消息',
+                    body: '你开森就好？',
+                    notices: 8,
+                    time: '18:01',
+                    category: 'post'
+                },
+                    {
+                        title: '公告',
+                        body: '你开森就好你开森就好你开森就好你开森就好',
+                        notices: 0,
+                        time: '1993.02.24',
+                        category: 'post'
+                    }
+                    ,
+                    {
+                        title: '可达鸭',
+                        body: '我可谢谢你了！',
+                        notices: 0,
+                        time: '18:04',
+                        category: 'url'
+                    }
+                ]
+            }
         },
         created () {},
         methods: {
@@ -35,7 +68,7 @@
                 return {
                     width: 750,
                     height: eros.statusBarHeight,
-                    backgroundColor: 'white'
+                    backgroundColor: '#009fe8'
                 }
             }
         }
@@ -52,13 +85,12 @@
 
     .list-content {
         width: 750;
-        /*flex: 1;*/
         background-color: white;
     }
 
     .list-item {
         width: 750;
-        height: 200;
+        /*height: 184;*/
         background-color: green;
     }
 
@@ -67,4 +99,5 @@
         background-color: #c0c0c0;
         height: 1;
     }
+
 </style>
