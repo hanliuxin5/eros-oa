@@ -4,9 +4,9 @@
         <nav title="消息"></nav>
         <list ref="list" class="list-content" showRefresh="true" @refresh="onRefresh">
             <cell style="height: 144" class="list-item" v-for="item in list">
-                <itemone :title="item.title" :body="item.body"
+                <item-post :title="item.title" :body="item.body"
                          :time="item.time" :notices="item.notices"
-                         :category="item.category"></itemone>
+                         :category="item.category"></item-post>
             </cell>
         </list>
         <div class="divide"></div>
@@ -16,10 +16,10 @@
 <script>
 
     import Nav from '../../common/navbar'
-    import Itemone from '../../common/item/itemone'
+    import ItemPost from '../../common/item/itempost'
 
     export default {
-        components: {Nav, Itemone},
+        components: {Nav, ItemPost},
         data () {
             return {
                 list: [{
@@ -91,7 +91,7 @@
     .list-item {
         width: 750;
         /*height: 184;*/
-        background-color: green;
+        /*background-color: green;*/
     }
 
     .divide {

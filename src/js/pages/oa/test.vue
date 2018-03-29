@@ -1,40 +1,44 @@
 <template>
-    <wxc-tab-bar :tab-titles="tabTitles"
-                 :tab-styles="tabStyles"
-                 title-use-slot="true"
-                 title-type="icon"
-                 @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected">
-        <template v-for="(tab,index) in tabTitles">
-            <div class="tab-item"
-                 :style="{width: tabStyles.width +'px', height: tabStyles.height +'px',backgroundColor: currentPage == index ? tabStyles.activeBgColor : tabStyles.bgColor }"
-                 :slot="'tab-title-'+index">
-                <image
-                    :style="{ width: tabStyles.iconWidth + 'px', height:tabStyles.iconHeight+'px'}"
-                    :src="currentPage == index ? tab.activeIcon : tab.icon"></image>
-                <text class="tab-text">{{tab.title}}</text>
-            </div>
-            <message v-if="index===0" :style="contentStyle"></message>
-            <work v-else-if="index===1" :style="contentStyle"></work>
-            <div v-else class="item-container" :style="contentStyle">
-                <div :style="statusBarStyle"></div>
-                <text>{{index}}</text>
-            </div>
-        </template>
-    </wxc-tab-bar>
+    <div>
+        <wxc-tab-bar :tab-titles="tabTitles"
+                     :tab-styles="tabStyles"
+                     title-use-slot="true"
+                     title-type="icon"
+                     @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected">
+            <template v-for="(tab,index) in tabTitles">
+                <div class="tab-item"
+                     :style="{width: tabStyles.width +'px', height: tabStyles.height +'px',backgroundColor: currentPage == index ? tabStyles.activeBgColor : tabStyles.bgColor }"
+                     :slot="'tab-title-'+index">
+                    <image
+                        :style="{ width: tabStyles.iconWidth + 'px', height:tabStyles.iconHeight+'px'}"
+                        :src="currentPage == index ? tab.activeIcon : tab.icon"></image>
+                    <text class="tab-text">{{tab.title}}</text>
+                </div>
+                <message v-if="index===0" :style="contentStyle"></message>
+                <work v-else-if="index===1" :style="contentStyle"></work>
+                <div v-else class="item-container" :style="contentStyle">
+                    <div :style="statusBarStyle"></div>
+                    <text>{{index}}</text>
+                </div>
+            </template>
+        </wxc-tab-bar>
+        <div class="action">
+            <img style="height: 56;width: 56" src="bmlocal://assets/icon_add.png">
+        </div>
+    </div>
 </template>
 
 <script>
-    import { WxcButton, WxcTabBar } from 'weex-ui'
+    import { WxcTabBar } from 'weex-ui'
     import Config from './config'
 
-    import Child from './child'
+    // import Child from './child'
     import Message from './module/message/message'
     import Work from './module/work/work'
 
     export default {
         components: {
-            WxcButton, WxcTabBar, Child,
-            Message, Work
+            WxcTabBar, Message, Work
         },
         data () {
             return {
@@ -78,10 +82,6 @@
                     height: eros.statusBarHeight,
                     backgroundColor: 'blue'
                 }
-            },
-            height: function () {
-                const eros = weex.config.eros
-                return eros.deviceId
             }
         }
 
@@ -107,5 +107,22 @@
         background-color: #f2f3f4;
         align-items: center;
         justify-content: start;
+    }
+
+    .action {
+        position: absolute;
+        width: 112;
+        height: 112;
+        right: 40;
+        bottom: 144;
+        background-color: #009fe8;
+        border-radius: 80;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 4px 4px 2px #c0c0c0;
+    }
+
+    .action:active {
+        background-color: #00cfe8;
     }
 </style>
