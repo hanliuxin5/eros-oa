@@ -8,6 +8,8 @@
                      src="bmlocal://assets/icon_plan.png">
                 <img v-else-if="category==='special'" class="iconAvatar"
                      src="bmlocal://assets/icon_special.png">
+                <img v-else="category==='calendar'" class="iconAvatar"
+                     src="bmlocal://assets/icon_calendar.png">
                 <div v-if="notices!==0" class="iconNotice">
                     <text style="color: white;font-size: 24">{{notices}}</text>
                 </div>

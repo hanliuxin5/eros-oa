@@ -1,3 +1,5 @@
+<!-- 考核 的子项模板-->
+
 <template>
     <div class="container">
         <text class="title">{{name}}</text>

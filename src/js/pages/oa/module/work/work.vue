@@ -11,8 +11,8 @@
                 <all v-if="index===0" class="list-content"
                      :style="contentStyle">
                 </all>
-                <!--<assess v-if="index===0" class="list-content"-->
-                <!--:style="contentStyle"></assess>-->
+                <approval v-else-if="index===1" class="list-content"
+                          :style="contentStyle"></approval>
                 <post v-else-if="index===2" class="list-content"
                       :style="contentStyle"></post>
                 <mission v-else-if="index===3" class="list-content"
@@ -23,6 +23,10 @@
                          :style="contentStyle"></special>
                 <assess v-else-if="index===6" class="list-content"
                         :style="contentStyle"></assess>
+                <Memo v-else-if="index===7" class="list-content"
+                      :style="contentStyle"></Memo>
+                <calendar v-else-if="index===8" class="list-content"
+                          :style="contentStyle"></calendar>
                 <div v-else class="list-content" :style="contentStyle">
                     <text>{{index}},{{tab.title}}</text>
                 </div>
@@ -34,19 +38,21 @@
 <script>
     import Nav from '../../common/navbar'
     import All from './taball'
-
+    import Approval from './tabapproval'
     import Post from './tabpost'
     import Mission from './tabmission'
     import Plan from './tabplan'
     import Special from './tabspecial'
     import Assess from './tabassess'
+    import Memo from './tabmemo'
+    import Calendar from './tabcalendar'
 
     import { WxcTabPage } from 'weex-ui'
     import Config from './config'
 
     export default {
         components: {
-            Nav, All, Post, Mission, Plan, Special, Assess,
+            Nav, All, Approval, Post, Mission, Plan, Special, Assess, Memo, Calendar,
             WxcTabPage
         },
         data () {
