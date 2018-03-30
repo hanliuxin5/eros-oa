@@ -17,13 +17,14 @@
                 <message v-if="index===0" :style="contentStyle"></message>
                 <work v-else-if="index===1" :style="contentStyle"></work>
                 <contacts v-else-if="index===2" :style="contentStyle"></contacts>
-                <div v-else class="item-container" :style="contentStyle">
-                    <div :style="statusBarStyle"></div>
-                    <text>{{index}}</text>
-                </div>
+                <me v-else :style="contentStyle"></me>
+                <!--<div v-else class="item-container" :style="contentStyle">-->
+                <!--<div :style="statusBarStyle"></div>-->
+                <!--<text>{{index}}</text>-->
+                <!--</div>-->
             </template>
         </wxc-tab-bar>
-        <div class="action">
+        <div class="action" v-if="currentPage===0">
             <img style="height: 56;width: 56" src="bmlocal://assets/icon_add.png">
         </div>
     </div>
@@ -37,10 +38,11 @@
     import Message from './module/message/message'
     import Work from './module/work/work'
     import Contacts from './module/contacts/contacts'
+    import Me from './module/me/me'
 
     export default {
         components: {
-            WxcTabBar, Message, Work, Contacts
+            WxcTabBar, Message, Work, Contacts, Me
         },
         data () {
             return {
