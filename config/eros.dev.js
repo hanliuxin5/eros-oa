@@ -8,7 +8,11 @@ module.exports = {
         // mediator
         'js/mediator/index.vue',
         // oa
-        'js/pages/oa/test.vue'
+        'js/pages/oa/test.vue',
+        'js/pages/oa/module/contacts/department.vue',
+        'js/pages/oa/module/contacts/organize.vue',
+        'js/pages/oa/module/contacts/group.vue'
+
     ],
     'alias': {
         'Components': 'js/components',

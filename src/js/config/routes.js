@@ -5,6 +5,15 @@
 //  dev.json 的 exports 需要打包的js地址，填入src的需要被打包成js bundle的地址   从src开始
 
 export default {
+    'department': {
+        url: '/pages/oa/module/contacts/department.js'
+    },
+    'organize': {
+        url: '/pages/oa/module/contacts/organize.js'
+    },
+    'group': {
+        url: '/pages/oa/module/contacts/group.js'
+    },
     'demo': {
         title: 'weex-eros demo',
         url: '/pages/demo/index.js'

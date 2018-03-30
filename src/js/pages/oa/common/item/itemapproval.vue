@@ -17,10 +17,10 @@
 </template>
 
 <script>
-    import { WxcSimpleFlow } from 'weex-ui'
+    import { WxcSimpleFlow, WxcCell } from 'weex-ui'
 
     export default {
-        components: {WxcSimpleFlow},
+        components: {WxcSimpleFlow, WxcCell},
         data () {
             return {
                 themeColor: {
@@ -72,17 +72,19 @@
 
     .name {
         width: 750;
-        background-color: white;
+        /*background-color: red;*/
         flex-direction: row;
         justify-content: start;
         align-items: center;
         padding-left: 16;
         padding-top: 16;
+        padding-bottom: 0;
     }
 
     .flow {
         padding-left: 40;
         width: 750;
+        padding-top: 0;
         /*background-color: #00cfe8;*/
     }
 

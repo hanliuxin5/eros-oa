@@ -16,6 +16,7 @@
                 </div>
                 <message v-if="index===0" :style="contentStyle"></message>
                 <work v-else-if="index===1" :style="contentStyle"></work>
+                <contacts v-else-if="index===2" :style="contentStyle"></contacts>
                 <div v-else class="item-container" :style="contentStyle">
                     <div :style="statusBarStyle"></div>
                     <text>{{index}}</text>
@@ -35,10 +36,11 @@
     // import Child from './child'
     import Message from './module/message/message'
     import Work from './module/work/work'
+    import Contacts from './module/contacts/contacts'
 
     export default {
         components: {
-            WxcTabBar, Message, Work
+            WxcTabBar, Message, Work, Contacts
         },
         data () {
             return {
