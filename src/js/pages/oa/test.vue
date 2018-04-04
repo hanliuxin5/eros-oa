@@ -72,7 +72,6 @@
                 this.show = false
             },
             openMenu () {
-                // console.log(this.$refs)
                 let translateY
                 let rotate
                 let opacity
@@ -91,10 +90,8 @@
                 for (let x in this.$refs) {
                     if (x.toString().startsWith('action')) {
                         let item = this.$refs[x]
-                        // console.log(item)
                         animation.transition(item, {
                             styles: {
-                                color: '#FF0000',
                                 transform: `translate(0,${i * translateY})`,
                                 transformOrigin: 'center center',
                                 // backgroundColor: '#66ccff',
@@ -111,7 +108,6 @@
                 }
                 animation.transition(this.$refs.menu, {
                     styles: {
-                        color: '#FF0000',
                         transform: `rotate(${rotate}deg)`,
                         transformOrigin: 'center center',
                     },
@@ -122,13 +118,11 @@
                     // modal.toast({message: `item${i},animation finished.`})
                 })
 
-                // console.log(approval)
 
             },
             wxcTabBarCurrentTabSelected (e) {
                 const index = e.page
                 this.currentPage = index
-                // console.log(index)
             },
             androidFinishApp () {
                 const globalEvent = weex.requireModule('globalEvent')
@@ -201,8 +195,8 @@
 
     .action {
         position: fixed;
-        width: 112;
-        height: 112;
+        width: 114;
+        height: 114;
         right: 40;
         bottom: 144;
         background-color: #009fe8;
@@ -214,7 +208,7 @@
     .action-child {
         position: fixed;
         width: auto;
-        height: 112;
+        height: 114;
         right: 40;
         bottom: 144;
         /*background-color: black;*/
