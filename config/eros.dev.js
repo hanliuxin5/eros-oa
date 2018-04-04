@@ -22,18 +22,18 @@ module.exports = {
         'Pages': 'js/pages',
         'Utils': 'js/utils'
     },
-    'diff': {
-        'pwd': '/Users/yangmingzhe/Work/opensource/eros-diff-folder',
-        'proxy': 'https://app.weex-eros.com/source'
-    },
+    // 'diff': {
+    //     'pwd': '/Users/yangmingzhe/Work/opensource/eros-diff-folder',
+    //     'proxy': 'https://app.weex-eros.com/source'
+    // },
     'server': {
         'path': './',
         'port': 8889
     },
-    'mockServer': {
-        'port': 52077,
-        'mockDir': './dist/mock'
-    },
+    // 'mockServer': {
+    //     'port': 52077,
+    //     'mockDir': './dist/mock'
+    // },
     'socketServer': {
         'port': 8890,
         'switch': true
