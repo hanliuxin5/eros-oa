@@ -5,6 +5,12 @@
 //  dev.json 的 exports 需要打包的js地址，填入src的需要被打包成js bundle的地址   从src开始
 
 export default {
+    'profile.edit': {
+        url: '/pages/oa/module/contacts/profileEdit.js'
+    },
+    'profile': {
+        url: '/pages/oa/module/contacts/profile.js'
+    },
     'department': {
         url: '/pages/oa/module/contacts/department.js'
     },

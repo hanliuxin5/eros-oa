@@ -4,11 +4,11 @@
     <div class="container">
         <div class="contentContainer">
             <div class="iconContent">
-                <img v-if="category==='post'" class="iconAvatar"
+                <image v-if="category==='post'" class="iconAvatar"
                      src="bmlocal://assets/icon_post.png">
-                <img v-else-if="category==='mission'" class="iconAvatar"
+                <image v-else-if="category==='mission'" class="iconAvatar"
                      src="bmlocal://assets/icon_mission.png">
-                <img v-else class="iconAvatar"
+                <image v-else class="iconAvatar"
                      src="bmlocal://assets/demo.jpg">
                 <div v-if="notices!==0" class="iconNotice">
                     <text style="color: white;font-size: 24">{{notices}}</text>

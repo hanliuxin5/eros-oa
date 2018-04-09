@@ -11,8 +11,9 @@ module.exports = {
         'js/pages/oa/test.vue',
         'js/pages/oa/module/contacts/department.vue',
         'js/pages/oa/module/contacts/organize.vue',
-        'js/pages/oa/module/contacts/group.vue'
-
+        'js/pages/oa/module/contacts/group.vue',
+        'js/pages/oa/module/contacts/profile.vue',
+        'js/pages/oa/module/contacts/profileEdit.vue'
     ],
     'alias': {
         'Components': 'js/components',

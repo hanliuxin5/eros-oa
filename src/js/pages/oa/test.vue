@@ -27,13 +27,13 @@
         <div v-if="show" :style="overlayStyle"></div>
 
         <div ref="action2" v-if="currentPage===0" class="action-child">
-            <text style="color: white">提出审批</text>
+            <text style="color: white">审批</text>
             <img style="height: 120;width: 120" src="bmlocal://assets/icon_approval.png">
         </div>
-        <div ref="action1" v-if="currentPage===0" class="action-child">
-            <text style="color: white">打卡</text>
-            <img style="height: 120;width: 120" src="bmlocal://assets/icon_approval.png">
-        </div>
+        <!--<div ref="action1" v-if="currentPage===0" class="action-child" @click="openAction1">-->
+            <!--<text style="color: white">打卡</text>-->
+            <!--<img style="height: 120;width: 120" src="bmlocal://assets/icon_approval.png">-->
+        <!--</div>-->
         <div class="action" v-if="currentPage===0" @click="openMenu">
             <img ref="menu" style="height: 56;width: 56" src="bmlocal://assets/icon_add.png">
         </div>
@@ -70,6 +70,8 @@
         methods: {
             wxcOverlayBodyClicked (e) {
                 this.show = false
+            },
+            openAction1 () {
             },
             openMenu () {
                 let translateY
@@ -117,7 +119,6 @@
                 }, function () {
                     // modal.toast({message: `item${i},animation finished.`})
                 })
-
 
             },
             wxcTabBarCurrentTabSelected (e) {
@@ -184,13 +185,6 @@
         font-size: 22px;
         lines: 1;
         text-overflow: ellipsis;
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0.6;
     }
 
     .action {
