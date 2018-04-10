@@ -10,7 +10,8 @@
                       class="name"
                       :cell-style="{width:750}"
                       :has-bottom-border="true"
-                      :has-top-border="true">
+                      :has-top-border="true"
+                      @wxcCellClicked="click">
                 <image class="image"
                        slot="label"
                        src="bmlocal://assets/demo.jpg"></image>
@@ -30,7 +31,14 @@
             return {}
         },
         created () {},
-        methods: {},
+        methods: {
+            click () {
+                this.$router.open({
+                    name: 'profile',
+                    type: 'PUSH'
+                })
+            }
+        },
         computed: {
             contentStyle: function () {
                 const eros = weex.config.eros

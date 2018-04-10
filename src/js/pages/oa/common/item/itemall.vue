@@ -2,8 +2,8 @@
 
 <template>
     <div class="container">
-        <img v-if="category==='post'" class="icon" src="bmlocal://assets/icon_post.png">
-        <img v-else class="icon" src="bmlocal://assets/icon_mission.png">
+        <image v-if="category==='post'" class="icon" src="bmlocal://assets/icon_post.png">
+        <image v-else class="icon" src="bmlocal://assets/icon_mission.png">
         <text v-if="category==='post'" class="text">新公告</text>
         <text v-else class="text">新任务</text>
         <div v-if="notices!==0" class="notices">

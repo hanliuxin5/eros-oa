@@ -6,21 +6,21 @@
         <div class="content">
             <div class="grid">
                 <div class="grid-title">
-                    <img class="icon" src="bmlocal://assets/icon_calendar.png">
+                    <image class="icon" src="bmlocal://assets/icon_calendar.png">
                     <text class="grid-title-text">考核月度</text>
                 </div>
                 <text class="text">{{time}}</text>
             </div>
             <div class="grid">
                 <div class="grid-title">
-                    <img class="icon" src="bmlocal://assets/icon_assess.png">
+                    <image class="icon" src="bmlocal://assets/icon_assess.png">
                     <text class="grid-title-text">考核得分</text>
                 </div>
                 <text class="text">{{score}}</text>
             </div>
             <div class="grid">
                 <div class="grid-title">
-                    <img class="icon" src="bmlocal://assets/icon_status.png">
+                    <image class="icon" src="bmlocal://assets/icon_status.png">
                     <text class="grid-title-text">是否逆向否定</text>
                 </div>
                 <text class="text">{{status}}</text>

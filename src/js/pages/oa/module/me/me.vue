@@ -2,9 +2,9 @@
     <div class="item-container">
         <div :style="statusBarStyle"></div>
         <div class="profile">
-            <img style="width: 750;height: 360" src="bmlocal://assets/bg_profile.png">
+            <image style="width: 750;height: 360" src="bmlocal://assets/bg_profile.png">
             <text style="position: absolute;top: 32;left: 365;font-size: 36;color: white">我</text>
-            <img src="bmlocal://assets/demo.jpg"
+            <image src="bmlocal://assets/demo.jpg"
                  style="position: absolute;top: 104;
                  border-radius: 184;
                  height: 184;width: 184;

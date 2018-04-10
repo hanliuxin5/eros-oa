@@ -28,14 +28,14 @@
 
         <div ref="action2" v-if="currentPage===0" class="action-child">
             <text style="color: white">审批</text>
-            <img style="height: 120;width: 120" src="bmlocal://assets/icon_approval.png">
+            <image style="height: 120;width: 120" src="bmlocal://assets/icon_approval.png"></image>
         </div>
         <!--<div ref="action1" v-if="currentPage===0" class="action-child" @click="openAction1">-->
-            <!--<text style="color: white">打卡</text>-->
-            <!--<img style="height: 120;width: 120" src="bmlocal://assets/icon_approval.png">-->
+        <!--<text style="color: white">打卡</text>-->
+        <!--<img style="height: 120;width: 120" src="bmlocal://assets/icon_approval.png">-->
         <!--</div>-->
         <div class="action" v-if="currentPage===0" @click="openMenu">
-            <img ref="menu" style="height: 56;width: 56" src="bmlocal://assets/icon_add.png">
+            <image ref="menu" style="height: 56;width: 56" src="bmlocal://assets/icon_add.png"></image>
         </div>
     </wxc-tab-bar>
 
